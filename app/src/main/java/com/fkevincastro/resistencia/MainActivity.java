@@ -10,12 +10,12 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button banda1,banda2, banda3, banda4,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,reset;
+    Button banda1,banda2, banda3, banda4,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11;
     TextView ValR,Tol;
     int[] ValRes;
 
 
-    int ColActual,BanActual;
+    int ColActual=1,BanActual=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         banda4=findViewById(R.id.bB4);
         Tol=findViewById(R.id.tTol);
         ValR=findViewById(R.id.tValR);
-        reset=findViewById(R.id.bRestart);
 
 
 
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         valTotal=ValRes[0]*10+ValRes[1];
 
         switch (ValRes[2]){
-            case 0: ValR.setText(String.valueOf(valTotal)+"Ohms");
+            case 0: ValR.setText(String.valueOf(valTotal)+" Ohms");
             break;
             case 1: ValR.setText(String.valueOf(valTotal)+"0 Ohms");
                 break;
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             case 9: ValR.setText(String.valueOf(valTotal)+" G Ohms");
                 break;
             default:ValR.setText("Incorrecto...");
-                break;
+            break;
 
 
         }
@@ -220,92 +219,123 @@ public class MainActivity extends AppCompatActivity {
             case 11:banda4.setBackground(c11.getBackground());
                 Tol.setText("10%");
                 break;
+            default:banda4.setBackground(c10.getBackground());
+                Tol.setText("5%");
+                break;
         }
 
     }
 
     public void OnBanda1Clicked(View view) {
         BanActual=1;
-        c0.setVisibility(View.GONE);
+        c0.setVisibility(View.INVISIBLE);
+        c0.setEnabled(false);
         c1.setVisibility(View.VISIBLE);
+        c1.setEnabled(true);
         c2.setVisibility(View.VISIBLE);
+        c2.setEnabled(true);
         c3.setVisibility(View.VISIBLE);
+        c3.setEnabled(true);
         c4.setVisibility(View.VISIBLE);
+        c4.setEnabled(true);
         c5.setVisibility(View.VISIBLE);
+        c5.setEnabled(true);
         c6.setVisibility(View.VISIBLE);
+        c6.setEnabled(true);
         c7.setVisibility(View.VISIBLE);
+        c7.setEnabled(true);
         c8.setVisibility(View.VISIBLE);
+        c8.setEnabled(true);
         c9.setVisibility(View.VISIBLE);
-        c10.setVisibility(View.GONE);
-        c11.setVisibility(View.GONE);
+        c9.setEnabled(true);
+        c10.setVisibility(View.INVISIBLE);
+        c10.setEnabled(false);
+        c11.setVisibility(View.INVISIBLE);
+        c11.setEnabled(false);
     }
     public void OnBanda2Clicked(View view) {
         BanActual=2;
         c0.setVisibility(View.VISIBLE);
+        c0.setEnabled(true);
         c1.setVisibility(View.VISIBLE);
+        c1.setEnabled(true);
         c2.setVisibility(View.VISIBLE);
+        c2.setEnabled(true);
         c3.setVisibility(View.VISIBLE);
+        c3.setEnabled(true);
         c4.setVisibility(View.VISIBLE);
+        c4.setEnabled(true);
         c5.setVisibility(View.VISIBLE);
+        c5.setEnabled(true);
         c6.setVisibility(View.VISIBLE);
+        c6.setEnabled(true);
         c7.setVisibility(View.VISIBLE);
+        c7.setEnabled(true);
         c8.setVisibility(View.VISIBLE);
+        c8.setEnabled(true);
         c9.setVisibility(View.VISIBLE);
-        c10.setVisibility(View.GONE);
-        c11.setVisibility(View.GONE);
+        c9.setEnabled(true);
+        c10.setVisibility(View.INVISIBLE);
+        c10.setEnabled(false);
+        c11.setVisibility(View.INVISIBLE);
+        c11.setEnabled(false);
     }
     public void OnBanda3Clicked(View view) {
         BanActual=3;
         c0.setVisibility(View.VISIBLE);
+        c0.setEnabled(true);
         c1.setVisibility(View.VISIBLE);
+        c1.setEnabled(true);
         c2.setVisibility(View.VISIBLE);
+        c2.setEnabled(true);
         c3.setVisibility(View.VISIBLE);
+        c3.setEnabled(true);
         c4.setVisibility(View.VISIBLE);
+        c4.setEnabled(true);
         c5.setVisibility(View.VISIBLE);
+        c5.setEnabled(true);
         c6.setVisibility(View.VISIBLE);
+        c6.setEnabled(true);
         c7.setVisibility(View.VISIBLE);
+        c7.setEnabled(true);
         c8.setVisibility(View.VISIBLE);
+        c8.setEnabled(true);
         c9.setVisibility(View.VISIBLE);
-        c10.setVisibility(View.GONE);
-        c11.setVisibility(View.GONE);
+        c9.setEnabled(true);
+        c10.setVisibility(View.INVISIBLE);
+        c10.setEnabled(false);
+        c11.setVisibility(View.INVISIBLE);
+        c11.setEnabled(false);
     }
     public void OnBanda4Clicked(View view) {
         BanActual=4;
-        c0.setVisibility(View.GONE);
-        c1.setVisibility(View.GONE);
-        c2.setVisibility(View.GONE);
-        c3.setVisibility(View.GONE);
-        c4.setVisibility(View.GONE);
-        c5.setVisibility(View.GONE);
-        c6.setVisibility(View.GONE);
-        c7.setVisibility(View.GONE);
-        c8.setVisibility(View.GONE);
-        c9.setVisibility(View.GONE);
+        c0.setVisibility(View.INVISIBLE);
+        c0.setEnabled(false);
+        c1.setVisibility(View.INVISIBLE);
+        c1.setEnabled(false);
+        c2.setVisibility(View.INVISIBLE);
+        c2.setEnabled(false);
+        c3.setVisibility(View.INVISIBLE);
+        c3.setEnabled(false);
+        c4.setVisibility(View.INVISIBLE);
+        c4.setEnabled(false);
+        c5.setVisibility(View.INVISIBLE);
+        c5.setEnabled(false);
+        c6.setVisibility(View.INVISIBLE);
+        c6.setEnabled(false);
+        c7.setVisibility(View.INVISIBLE);
+        c7.setEnabled(false);
+        c8.setVisibility(View.INVISIBLE);
+        c8.setEnabled(false);
+        c9.setVisibility(View.INVISIBLE);
+        c9.setEnabled(false);
         c10.setVisibility(View.VISIBLE);
+        c10.setEnabled(true);
         c11.setVisibility(View.VISIBLE);
+        c11.setEnabled(true);
     }
 
 
 
-    public void OnResetClicked(View view) {
-        ValRes[0]=0;
-        ValRes[1]=0;
-        ValRes[2]=2;
-        c0.setVisibility(View.VISIBLE);
-        c1.setVisibility(View.VISIBLE);
-        c2.setVisibility(View.VISIBLE);
-        c3.setVisibility(View.VISIBLE);
-        c4.setVisibility(View.VISIBLE);
-        c5.setVisibility(View.VISIBLE);
-        c6.setVisibility(View.VISIBLE);
-        c7.setVisibility(View.VISIBLE);
-        c8.setVisibility(View.VISIBLE);
-        c9.setVisibility(View.VISIBLE);
-        c10.setVisibility(View.VISIBLE);
-        c11.setVisibility(View.VISIBLE);
-        banda1.setBackgroundColor(Color.GRAY);
-        banda2.setBackgroundColor(Color.GRAY);
-        banda3.setBackgroundColor(Color.GRAY);
-        banda4.setBackgroundColor(Color.GRAY);
-    }
+
 }
